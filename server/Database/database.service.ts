@@ -38,6 +38,10 @@ export async function LoginByEmail(email: string, password: string) {
     }
 }
 
+export async function removerUser(id: number) {
+    return await prisma.user.delete({ where: { id } })
+}
+
 export async function getUser(email: string) {
     return await prisma.user.findUnique({ where: { email: email } })
 }

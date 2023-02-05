@@ -9,6 +9,10 @@ export default function RegisterPage() {
     const [redirect, setRedirect] = useState(false)
     function registerUser(ev: any) {
         ev.preventDefault()
+        if (name == "" || lastname == "" || email == "" || password == "" || !name || !lastname || !email || !password) {
+            alert("You must fill all the gaps!")
+            return
+        }
         axios.post("/register", { message: { name, password, email, lastname } })
             .then(res => {
                 if (res.status == 201) {

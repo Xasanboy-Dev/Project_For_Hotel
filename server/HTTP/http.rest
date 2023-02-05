@@ -23,3 +23,5 @@ Content-Type: application/json
         "password":"1234"
     }
 }
+###
+DELETE {{url}}/user/10

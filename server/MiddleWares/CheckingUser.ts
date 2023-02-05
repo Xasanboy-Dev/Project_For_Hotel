@@ -11,7 +11,7 @@ export async function CheckingUserValid(req: any, res: any, next: any) {
         return next()
     }
     res.status(200).json({
-        message: `Your email or password isn't valid!`,
+        message: `You have already registered! Please log in`,
     })
     return
 }
@@ -27,6 +27,14 @@ export async function LoginUserByEmail(req: any, res: any, next: any) {
                 message: 'You have some probems. Please check and try again!',
             })
         }
+    } catch (error: any) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
+export async function CheckingAuth(req: any, res: any, next: any) {
+    try {
+        console.log(req.header  )
     } catch (error: any) {
         res.status(500).json({ message: error.message })
     }

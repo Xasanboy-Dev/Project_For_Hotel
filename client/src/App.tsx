@@ -5,8 +5,10 @@ import Layot from './Layout'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import axios from 'axios'
-import { UserContext, UserContextProvider } from './UserContext'
+import { UserContextProvider } from './UserContext'
 import IndexPage from './pages/IndexPage'
+import Account from './pages/AccountPage'
+import PlacePage from './pages/PlacesPage'
 axios.defaults.baseURL = 'http://localhost:8080'
 axios.defaults.withCredentials = true
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/profile' element={<ProfilePage />} />
+          <Route path="/account/:subpage?" element={<Account />} />
+          <Route path="/account/:supage/:action" element={<PlacePage />} />
         </Route>
       </Routes>
     </UserContextProvider>

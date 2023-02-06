@@ -28,6 +28,7 @@ server.post('/register', CheckingUserValid, postRegister)
 server.post('/login', LoginUserByEmail, LoginUser)
 
 server.get('/profile', GetUserData)
+
 server.delete('/user/:id', DeleteUserById)
 server.listen(PORT, () => {
     console.log(`SERVER: http://localhost:${PORT}`)

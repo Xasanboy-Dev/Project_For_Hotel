@@ -23,9 +23,10 @@ export default function LoginPage() {
                     alert(res.data.message)
                     return
                 }
-                console.log(res.data.message)
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem("name", res.data.user._user)
                 if (res.status == 200) {
+
                     setRedirect(true)
                 }
             })

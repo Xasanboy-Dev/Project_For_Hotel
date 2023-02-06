@@ -7,8 +7,8 @@ export default function IndexPage() {
             headers: {
                 'Authorization': localStorage.getItem('token')
             }
-        }).then(res => console.log(res.data.user.email))
-        
+        }).then(res => (res.data.user))
+
     }, [])
 
     return (

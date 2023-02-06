@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,4 +12,18 @@ model user {
   name     String
   email    String @unique
   password String
+}
+
+model placeSchema {
+  owner       Int 
+  id          Int      @id @default(autoincrement())
+  title       String
+  address     String
+  photos      String[]
+  description String
+  perks       String[]
+  extraInfo   String
+  checkIn     Int
+  checkOut    Int
+  maxGuests   Int
 }
